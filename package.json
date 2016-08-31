@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel watch:*",
-    "build": "npm run pug && npm run sass",
-    "pug": "pug src/pug --out ./ -P",
-    "watch:pug": "pug --watch src/pug --out ./ -P",
-    "sass": "node-sass src/scss -o stylesheets --output-style compressed",
-    "watch:sass": "node-sass -w src/scss -o stylesheets --output-style expand"
+    "build": "npm run pug && npm run sass && npm run clean",
+    "pug": "pug src/pug --out public -P",
+    "watch:pug": "pug --watch src/pug --out public --pretty",
+    "sass": "node-sass src/scss -o public/stylesheets --output-style compressed",
+    "watch:sass": "node-sass -w src/scss -o public/stylesheets --output-style expand",
+    "clean": "rm public/layout.html"
   },
   "keywords": [
     "tedxntust"
