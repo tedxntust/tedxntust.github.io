@@ -1,0 +1,24 @@
+{
+  "name": "tedxntust.github.io",
+  "version": "0.0.1",
+  "description": "tedxntust official website",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel watch:*",
+    "build": "npm run pug && npm run sass",
+    "pug": "pug src/pug --out ./ -P",
+    "watch:pug": "pug --watch src/pug --out ./ -P",
+    "sass": "node-sass src/scss -o stylesheets --output-style compressed",
+    "watch:sass": "node-sass -w src/scss -o stylesheets --output-style expand"
+  },
+  "keywords": [
+    "tedxntust"
+  ],
+  "author": "Chiun Hau You",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^3.8.0",
+    "npm-run-all": "^3.0.0",
+    "pug": "^2.0.0-beta6"
+  }
+}
